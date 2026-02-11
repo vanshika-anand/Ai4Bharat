@@ -739,13 +739,12 @@ def search_content(query: str, user_id: int):
 
 ### API Cost Management
 - Batch embedding generation when possible
-- Use `gpt-3.5-turbo` instead of `gpt-4` (10x cheaper)
+- Use `bedrock` 
 - Implement request queuing for non-urgent operations
 - Monitor usage with alerts at $50, $100 thresholds
 
 **Estimated Costs**:
 - Embeddings: $0.0001 per 1K tokens (~$0.01 per 100 pieces)
-- GPT-3.5-turbo: $0.002 per 1K tokens (~$0.10 per 50 adaptations)
 - **Total for demo**: <$5
 
 ---
@@ -767,11 +766,6 @@ def test_repetition_detection():
     assert 0.7 < score < 0.9
 ```
 
-### Integration Tests
-- Test full upload → embedding → storage flow
-- Test search with various queries
-- Test adaptation for all platforms
-
 ---
 
 ## Deployment Plan
@@ -790,25 +784,6 @@ cd frontend
 npm install
 npm run dev
 ```
-
-### Production Deployment
-
-**Backend**: Render.com (Free tier)
-- Python 3.11
-- Auto-deploy from GitHub
-- Environment variables for secrets
-
-**Frontend**: Vercel (Free tier)
-- Auto-deploy from GitHub
-- Custom domain support
-
-**Database**: 
-- SQLite for demo
-- PostgreSQL on Render for production
-
-**Monitoring**:
-- Sentry for error tracking
-- Simple analytics dashboard
 
 ---
 
