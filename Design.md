@@ -571,48 +571,6 @@ Response:
 
 ## Frontend Design
 
-### Component Structure
-
-```
-src/
-├── components/
-│   ├── Dashboard/
-│   │   ├── Dashboard.jsx
-│   │   ├── ContentList.jsx
-│   │   └── StatsCard.jsx
-│   ├── Upload/
-│   │   ├── UploadForm.jsx
-│   │   └── UploadProgress.jsx
-│   ├── Search/
-│   │   ├── SearchBar.jsx
-│   │   ├── SearchResults.jsx
-│   │   └── ContentCard.jsx
-│   ├── Check/
-│   │   ├── RepetitionChecker.jsx
-│   │   ├── SimilarityAlert.jsx
-│   │   └── ComparisonView.jsx
-│   ├── Adapt/
-│   │   ├── PlatformSelector.jsx
-│   │   ├── AdaptationPreview.jsx
-│   │   └── CopyButton.jsx
-│   └── Common/
-│       ├── Navbar.jsx
-│       ├── LoadingSpinner.jsx
-│       └── ErrorBoundary.jsx
-├── pages/
-│   ├── Home.jsx
-│   ├── Upload.jsx
-│   ├── Search.jsx
-│   ├── Check.jsx
-│   └── Adapt.jsx
-├── services/
-│   ├── api.js
-│   └── auth.js
-└── utils/
-    ├── formatters.js
-    └── validators.js
-```
-
 ### Key UI Screens
 
 #### 1. Dashboard
@@ -689,27 +647,6 @@ src/
 └─────────────────────────────────────────────────────────┘
 ```
 
----
-
-## Security & Privacy
-
-### Authentication
-- JWT-based authentication
-- Password hashing with bcrypt (cost factor: 12)
-- Secure session management
-- HTTPS only in production
-
-### Data Privacy
-- User content is private by default
-- No sharing between users
-- No training on user data
-- Clear data deletion policy
-
-### API Security
-- Rate limiting: 100 requests/minute per user
-- Input validation and sanitization
-- SQL injection prevention (parameterized queries)
-- CORS configuration for frontend domain only
 
 ---
 
@@ -787,18 +724,6 @@ npm run dev
 
 ---
 
-## MVP Feature Checklist
-
-### Must-Have (Hackathon Demo)
-- [x] User authentication (simple)
-- [x] Content upload with embedding generation
-- [x] Semantic search
-- [x] Repetition detection
-- [x] Platform adaptation (LinkedIn, Twitter, Instagram)
-- [x] Basic dashboard
-- [x] Responsive design
----
-
 ## Success Metrics
 
 ### Technical Metrics
@@ -823,21 +748,6 @@ npm run dev
 3. **Platform Intelligence**: Understands psychological differences between platforms
 4. **Student-Focused**: Affordable pricing and relevant use cases
 5. **Privacy-First**: No data sharing or training on user content
-
----
-
-## Technology Stack Summary
-
-| Layer | Technology | Justification |
-|-------|-----------|---------------|
-| Frontend | React + Vite | Fast development, modern tooling |
-| Styling | Tailwind CSS | Rapid UI development, consistent design |
-| Backend | Python + Flask | Easy AI integration, quick prototyping |
-| Database | SQLite → PostgreSQL | Simple start, easy migration |
-| AI | OpenAI API | Best-in-class embeddings and generation |
-| Hosting | Vercel + Render | Free tiers, easy deployment |
-| Auth | JWT | Stateless, scalable |
-
 
 ---
 
